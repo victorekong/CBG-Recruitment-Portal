@@ -1,0 +1,80 @@
+
+.center-div{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+}
+
+/* .input-group-addon {
+    background-color: #ffc107;
+} */
+
+.first{
+    margin-top: 20%;
+}
+
+.second{
+    margin-top: 10%;
+}
+
+.third{
+    margin-top: 6%;
+}
+
+.col-form-label{
+    margin-right: 30%;
+}
+
+.errorDiv{
+    color: #fff;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+}
+
+.form-control {
+    color: rgb(177, 20, 8);
+}
+
+.input-group-addon{
+    color: rgb(177, 20, 8);
+}
+
+.btn-button{
+    background-color:  rgb(177, 20, 8);
+    color: white;
+}
+
+label{
+    color: white;
+}
+
+input{
+    background-color: black;
+}
+
+p{
+    color: white;
+}
+
+button.close{
+    color: rgb(0, 0, 0);
+}
+
+::-webkit-input-placeholder { /* Chrome */
+    color: red;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: red;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: red;
+    opacity: 1;
+  }
