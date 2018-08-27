@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CBG Recruitment Portal</title>
+    <title>GCB Recruitment Portal</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <!--css stylesheet -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -23,11 +23,11 @@
                 <div class="modal-body">
                     <h4>Dear Applicant</h4>
                     <br /> Thank you for your interest in Consolidated Bank Ghana (CBG) 2018 Recruitment Exercise. To ensure you are eligible to be shortlisted for applicable vacancies,
-		    please log into the recruitment portal using your official email address. 
+		    please log into the recruitment portal using your staff ID or Account number (UniBank only). 
 		    Upon entry, fill the online questionnaire and attach your most recent curriculum vitae
                     in word or pdf format. All the requested information is mandatory.
                     <br />
-                    <br /> Kindly complete and submit your application on or before 27/08/2018. Please be advised no submission
+                    <br /> Kindly complete and submit your application on or before 29/08/2018. Please be advised no submission
                     will be considered after this date and any submission without the information requested will not be considered.
                 </div>
                 <div class="modal-footer">
@@ -47,196 +47,207 @@
             <tbody>
                 <tr>
                     <td colspan="1">
-                        <form class="form-horizontal" id="formValidate">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            Staff ID or Account Number
+                                        </span>
+                                        <input id="staff_id" name="staff_id" placeholder="Enter your staff ID or Account Number" class="form-control" required="true"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </td>
+                    <td colspan="1">
+                        <button class="btn btn-arrow btn-button form-success-gone" id="checkID" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Validating...">Validate</button>
+                    </td>
+                </tr>
+                <tr id="fill-form">
+                    <td colspan="1">
+                        <form class="form-horizontal" id="form1">
                             <fieldset>
                                 <div class="form-group">
-                                    <div class="col-md-12 inputGroupContainer">
+                                    <label class="col-md-4 control-label">Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="glyphicon glyphicon-envelope"></i>
+                                                <i class="glyphicon glyphicon-user"></i>
                                             </span>
-                                            <input id="email" name="email" placeholder="Enter your email" class="form-control" required="true" type="text">
+                                            <input id="staffname" name="staffname" class="form-control" readonly="readonly" required="true" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-4 control-label">Last Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="lastname" name="lastname" placeholder="Last Name" class="form-control" required="true" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Gender</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="gender" required>
+                                                <option selected>Choose...</option>
+                                                <option value="m">Male</option>
+                                                <option value="f">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Member Bank</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="memberbank" required>
+                                                <option selected>Choose...</option>
+                                                <option value="5">The Beige Bank</option>
+                                                <option value="3">The Royal Bank</option>
+                                                <option value="1">Uni Bank Ghana</option>
+                                                <option value="2">The Construction Bank</option>
+                                                <option value="4">Sovereign Bank Ghana</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Job Title</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="jobtitle" name="jobtitle" placeholder="Job Title at July 31st 2018" class="form-control" required="true" value=""
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Function</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="function" name="function" placeholder="Function at July 31st 2018" class="form-control" required="true" value=""
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Years of Employment in Member Bank</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="yearsofemployment" name="yearsofemployment" placeholder="Years of Employment in Member Bank" class="form-control"
+                                                required="true" value="" type="number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Highest Educational Qualification</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="highesteduqualification" required>
+                                                <option selected>Choose...</option>
+                                                <option value="hs">High School Diploma</option>
+                                                <option value="bsc">Bachelors</option>
+                                                <option value="msc">Masters</option>
+                                                <option value="dc">Doctorate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Title of Educational Qualification</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="titleofqualification" name="titleofqualification" placeholder="Title of Educational Qualification" class="form-control"
+                                                required="true" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Upload CV (max:2MB) </label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="file" name="file" class="form-control" required="true" type="file">
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
                     </td>
-                    <td colspan="1">
-                        <button class="btn btn-arrow btn-button form-success-gone" id="checkEmail" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Validating...">Validate</button>                                   
-                    </td>
-                </tr>
-                    <tr id="fill-form">
-                        <td colspan="1">
-                            <form class="form-horizontal" id="form1">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">First Name</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="firstname" name="firstname" placeholder="First Name" class="form-control" required="true" value="" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Last Name</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="lastname" name="lastname" placeholder="Last Name" class="form-control" required="true" value="" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Gender</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <select class="selectpicker form-control" id="gender" required>
-                                                    <option selected>Choose...</option>
-                                                    <option value="m">Male</option>
-                                                    <option value="f">Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Member Bank</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <select class="selectpicker form-control" id="memberbank" required>
-                                                    <option selected>Choose...</option>
-                                                    <option value="5">The Beige Bank</option>
-                                                    <option value="3">The Royal Bank</option>
-                                                    <option value="1">Uni Bank Ghana</option>
-                                                    <option value="2">The Construction Bank</option>
-                                                    <option value="4">Sovereign Bank Ghana</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Job Title</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="jobtitle" name="jobtitle" placeholder="Job Title at July 31st 2018" class="form-control" required="true" value=""
-                                                    type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Function</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="function" name="function" placeholder="Function at July 31st 2018" class="form-control" required="true" value=""
-                                                    type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 control-label">Years of Employment </label>
-                                        <div class="col-md-8 col-md-offset-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="yearsofemployment" name="yearsofemployment" placeholder="Years of Employment in Member Bank" class="form-control"
-                                                    required="true" value="" type="number">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 control-label">Highest Educational Qualification</label>
-                                        <div class="col-md-8 col-md-offset-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <select class="selectpicker form-control" id="highesteduqualification" required>
-                                                    <option selected>Choose...</option>
-                                                    <option value="hs">High School Diploma</option>
-                                                    <option value="bsc">Bachelors</option>
-                                                    <option value="msc">Masters</option>
-                                                    <option value="dc">Doctorate</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Upload CV (max:2MB) </label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="file" name="file" class="form-control" required="true" type="file">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </td>
 
-                        <td colspan="1">
-                            <form class="form-horizontal" id="form2">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Middle Name</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="middlename" name="middlename" placeholder="Middle Name" class="form-control" required="true" value="" type="text">
-                                            </div>
+                    <td colspan="1">
+                        <form class="form-horizontal" id="form2">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Email</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-envelope"></i>
+                                            </span>
+                                            <input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="email">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Title</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <select class="selectpicker form-control" id="title" required>
-                                                    <option selected>Choose...</option>
-                                                    <option value="mr">Mr</option>
-                                                    <option value="mrs">Mrs</option>
-                                                    <option value="ms">Miss</option>
-                                                    <option value="dr">Dr</option>
-                                                    <option value="prof">Professor</option>
-                                                </select>
-                                            </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-4 control-label">Title</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="title" required>
+                                                <option selected>Choose...</option>
+                                                <option value="mr">Mr</option>
+                                                <option value="mrs">Mrs</option>
+                                                <option value="ms">Miss</option>
+                                                <option value="dr">Dr</option>
+                                                <option value="prof">Professor</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">D.O.B</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input class="form-control" type="date" value="1992-08-05" id="dateofbirth" required>
-                                            </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">D.O.B</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input class="form-control" type="date" value="1992-08-05" id="dateofbirth" required>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                </div>
+                                <!-- <div class="form-group">
                                         <label class="col-md-4 control-label">Current Grade</label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
@@ -246,67 +257,142 @@
                                                 <input id="currentgrade" name="currentgrade" placeholder="Current Grade" class="form-control" required="true" value="" type="text">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Grade</label>
-                                        <div class="col-md-8 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="grade" name="grade" placeholder="Grade at July 31st 2018" class="form-control" required="true" value="" type="text">
-                                            </div>
+                                    </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Grade</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="grade" name="grade" class="form-control" required="true" value="" type="text">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 control-label">Cumulative Years of Experience </label>
-                                        <div class="col-md-8 col-md-offset-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <select class="selectpicker form-control" id="cumulativeyearsofexperience" style="width:100%" required>
-                                                    <option selected>Choose...</option>
-                                                    <option value="0">Less than a year</option>
-                                                    <option value="5">1-5 Years</option>
-                                                    <option value="10">5-10 Years</option>
-                                                    <option value="15">Over 10 Years</option>
-                                                </select>
-                                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Cumulative Years of Experience </label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="cumulativeyearsofexperience" style="width:100%" required>
+                                                <option selected>Choose...</option>
+                                                <option value="0">Less than a year</option>
+                                                <option value="5">1-5 Years</option>
+                                                <option value="10">5-10 Years</option>
+                                                <option value="15">Over 10 Years</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 control-label">Date of Last Promotion</label>
-                                        <div class="col-md-8 col-md-offset-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="dateoflastpromotion" name="dateoflastpromotion" class="form-control" required="true" value="2018-08-16" type="date">
-                                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Years of Banking Experience </label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <select class="selectpicker form-control" id="yrsofbankingexp" style="width:100%" required>
+                                                <option selected>Choose...</option>
+                                                <option value="0">Less than a year</option>
+                                                <option value="5">1-5 Years</option>
+                                                <option value="10">5-10 Years</option>
+                                                <option value="15">Over 10 Years</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 control-label">Professional Certification</label>
-                                        <div class="col-md-8 col-md-offset-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                </span>
-                                                <input id="profesionalcert" name="profesionalcert" class="form-control" required="true" placeholder="Professional Certification"
-                                                    type="text">
-                                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Date of Last Promotion</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="dateoflastpromotion" name="dateoflastpromotion" class="form-control" required="true" value="2018-08-16" type="date">
                                         </div>
                                     </div>
-                                </fieldset>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr id="fill-submit">
-                        <td colspan="2" style="text-align:center">
-                            <button class="btn btn-arrow btn-button form-success-gone " id="submit" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Submitting...">Submit</button>
-                        </td>
-                    </tr>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Professional Certification</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="profesionalcert" name="profesionalcert" class="form-control" required="true" placeholder="Professional Certification"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Key Achievements</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <textarea id="keyachievement" name="keyachievement" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </td>
+                </tr>
+                <tr id="otherexperience">
+                    <td colspan="1">
+                        <form class="form-horizontal" id="form3">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Other Experience</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <textarea id="otherexperience1" name="otherexperience1" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Other Experience</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <textarea id="otherexperience2" name="otherexperience2" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </td>
+                    <td colspan="1">
+                        <form class="form-horizontal" id="form4">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label">Other Experience</label>
+                                    <div class="col-md-8 col-md-offset-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <textarea id="otherexperience3" name="otherexperience3" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </td>
+                </tr>
+                <tr id="fill-submit">
+                    <td colspan="2" style="text-align:center">
+                        <button class="btn btn-arrow btn-button form-success-gone " id="submit" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Submitting...">Submit</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -321,8 +407,7 @@
     <script type="text/javascript">
         $(window).on('load', function () {
             $('#myModal').modal('show');
-            $('#fill-form').hide();
-            $('#fill-submit').hide();
+            hideDetailForm();
         });
     </script>
 </body>
